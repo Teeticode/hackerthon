@@ -16,6 +16,7 @@ import {
 } from "@expo/vector-icons";
 import React from "react";
 import Colors from "../../constants/Colors";
+import { useColorScheme } from "react-native";
 
 export default function MainIcon({
   name,
@@ -30,6 +31,7 @@ export default function MainIcon({
       return size;
     }
   };
+  const colorSheme = useColorScheme();
 
   return (
     <>
@@ -37,98 +39,182 @@ export default function MainIcon({
         <Feather
           name={name as keyof typeof Feather.glyphMap}
           size={iconSize()}
-          color={color ? color : Colors.theme.text}
+          color={
+            color
+              ? color
+              : colorSheme === "dark"
+              ? Colors.theme.icons
+              : Colors.theme.text
+          }
         />
       )}
       {source === "AntDesign" && (
         <AntDesign
           name={name as keyof typeof AntDesign.glyphMap}
           size={iconSize()}
-          color={color ? color : Colors.theme.text}
+          color={
+            color
+              ? color
+              : colorSheme === "dark"
+              ? Colors.theme.icons
+              : Colors.theme.text
+          }
         />
       )}
       {source === "Entypo" && (
         <Entypo
           name={name as keyof typeof Entypo.glyphMap}
           size={iconSize()}
-          color={color ? color : Colors.theme.text}
+          color={
+            color
+              ? color
+              : colorSheme === "dark"
+              ? Colors.theme.icons
+              : Colors.theme.text
+          }
         />
       )}
       {source === "EvilIcons" && (
         <EvilIcons
           name={name as keyof typeof EvilIcons.glyphMap}
           size={iconSize()}
-          color={color ? color : Colors.theme.text}
+          color={
+            color
+              ? color
+              : colorSheme === "dark"
+              ? Colors.theme.icons
+              : Colors.theme.text
+          }
         />
       )}
       {source === "FontAwesome" && (
         <FontAwesome
           name={name as keyof typeof FontAwesome.glyphMap}
           size={iconSize()}
-          color={color ? color : Colors.theme.text}
+          color={
+            color
+              ? color
+              : colorSheme === "dark"
+              ? Colors.theme.icons
+              : Colors.theme.text
+          }
         />
       )}
       {source === "FontAwesome5" && (
         <FontAwesome5
           name={name as keyof typeof FontAwesome.glyphMap}
           size={iconSize()}
-          color={color ? color : Colors.theme.text}
+          color={
+            color
+              ? color
+              : colorSheme === "dark"
+              ? Colors.theme.icons
+              : Colors.theme.text
+          }
         />
       )}
       {source === "Fontisto" && (
         <Fontisto
           name={name as keyof typeof Fontisto.glyphMap}
           size={iconSize()}
-          color={color ? color : Colors.theme.text}
+          color={
+            color
+              ? color
+              : colorSheme === "dark"
+              ? Colors.theme.icons
+              : Colors.theme.text
+          }
         />
       )}
       {source === "Foundation" && (
         <Foundation
           name={name as keyof typeof Foundation.glyphMap}
           size={iconSize()}
-          color={color ? color : Colors.theme.text}
+          color={
+            color
+              ? color
+              : colorSheme === "dark"
+              ? Colors.theme.icons
+              : Colors.theme.text
+          }
         />
       )}
       {source === "Ionicons" && (
         <Ionicons
           name={name as keyof typeof Ionicons.glyphMap}
           size={iconSize()}
-          color={color ? color : Colors.theme.text}
+          color={
+            color
+              ? color
+              : colorSheme === "dark"
+              ? Colors.theme.icons
+              : Colors.theme.text
+          }
         />
       )}
       {source === "MaterialCommunityIcons" && (
         <MaterialCommunityIcons
           name={name as keyof typeof MaterialCommunityIcons.glyphMap}
           size={iconSize()}
-          color={color ? color : Colors.theme.text}
+          color={
+            color
+              ? color
+              : colorSheme === "dark"
+              ? Colors.theme.icons
+              : Colors.theme.text
+          }
         />
       )}
       {source === "MaterialIcons" && (
         <MaterialIcons
           name={name as keyof typeof MaterialIcons.glyphMap}
           size={iconSize()}
-          color={color ? color : Colors.theme.text}
+          color={
+            color
+              ? color
+              : colorSheme === "dark"
+              ? Colors.theme.icons
+              : Colors.theme.text
+          }
         />
       )}
       {source === "Octicons" && (
         <Octicons
           name={name as keyof typeof Octicons.glyphMap}
           size={iconSize()}
-          color={color ? color : Colors.theme.text}
+          color={
+            color
+              ? color
+              : colorSheme === "dark"
+              ? Colors.theme.icons
+              : Colors.theme.text
+          }
         />
       )}
       {source === "SimpleLineIcons" && (
         <SimpleLineIcons
           name={name as keyof typeof SimpleLineIcons.glyphMap}
           size={iconSize()}
-          color={color ? color : Colors.theme.text}
+          color={
+            color
+              ? color
+              : colorSheme === "dark"
+              ? Colors.theme.icons
+              : Colors.theme.text
+          }
         />
       )}
       {source === "Zocial" && (
         <Zocial
           name={name as keyof typeof Zocial.glyphMap}
           size={iconSize()}
-          color={color ? color : Colors.theme.text}
+          color={
+            color
+              ? color
+              : colorSheme === "dark"
+              ? Colors.theme.icons
+              : Colors.theme.text
+          }
         />
       )}
     </>

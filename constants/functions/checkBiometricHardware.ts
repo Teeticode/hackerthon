@@ -1,5 +1,6 @@
+import userStore from "@/store/user.store";
 import * as LocalAuthentication from "expo-local-authentication";
-import useAuthStore from "../../services/stores/auth";
+
 
 export default async function checkBiometricHardware() {
   const isBiometricAvailable = await LocalAuthentication.hasHardwareAsync();
@@ -10,7 +11,7 @@ export default async function checkBiometricHardware() {
 
     if (isEnrolled) {
       console.log("Something");
-      useAuthStore.getState().setDeviceBiometricsDetails({
+      userStore.getState().setBiometricsDetails({
         isBiometricAvailable: true,
         biometricType: biometricTypes[0] == 2 ? "Face ID" : "Touch ID",
       });

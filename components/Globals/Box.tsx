@@ -1,3 +1,4 @@
+import Colors from "@/constants/Colors";
 import { AnimatePresence, MotiView } from "moti";
 import React, { ReactNode, useEffect, useState } from "react";
 import {
@@ -6,6 +7,7 @@ import {
   View,
   ViewProps,
   ViewStyle,
+  useColorScheme,
 } from "react-native";
 import Animated from "react-native-reanimated";
 
@@ -56,6 +58,7 @@ export default function Box({
   animated = false,
   opacity = 1,
 }: BoxProps) {
+  const colorScheme = useColorScheme();
   return (
     <View
       style={{
@@ -81,7 +84,11 @@ export default function Box({
         marginRight: mr,
         marginTop: mt,
         marginBottom: mb,
-        backgroundColor: color,
+        backgroundColor: color
+          ? color
+          : colorScheme === "dark"
+          ? Colors.theme.darkModeBg
+          : "white",
         borderRadius: radius,
         borderColor,
         borderWidth,
